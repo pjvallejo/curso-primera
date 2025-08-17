@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="calculator" role="application" aria-label="Calculator">
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <div class="history" id="history"></div>
+          <div class="result" id="result">0</div>
+        </div>
+
+        <div class="grid" id="keys">
+          <button class="btn action" data-action="clear-all" aria-label="Clear all">AC</button>
+          <button class="btn action" data-action="backspace" aria-label="Backspace">⌫</button>
+          <button class="btn action" data-action="percent" aria-label="Percent">%</button>
+          <button class="btn operator" data-operator="divide" aria-label="Divide" aria-pressed="false">÷</button>
+
+          <button class="btn" data-digit="7">7</button>
+          <button class="btn" data-digit="8">8</button>
+          <button class="btn" data-digit="9">9</button>
+          <button class="btn operator" data-operator="multiply" aria-label="Multiply" aria-pressed="false">×</button>
+
+          <button class="btn" data-digit="4">4</button>
+          <button class="btn" data-digit="5">5</button>
+          <button class="btn" data-digit="6">6</button>
+          <button class="btn operator" data-operator="subtract" aria-label="Subtract" aria-pressed="false">−</button>
+
+          <button class="btn" data-digit="1">1</button>
+          <button class="btn" data-digit="2">2</button>
+          <button class="btn" data-digit="3">3</button>
+          <button class="btn operator" data-operator="add" aria-label="Add" aria-pressed="false">+</button>
+
+          <button class="btn span-2" data-digit="0">0</button>
+          <button class="btn" data-dot=".">.</button>
+          <button class="btn equals" data-action="equals" aria-label="Equals">=</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
+

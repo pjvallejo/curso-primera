@@ -1,0 +1,132 @@
+:root {
+  --background: #0f172a; /* slate-900 */
+  --panel: #111827; /* gray-900 */
+  --panel-2: #1f2937; /* gray-800 */
+  --text: #e5e7eb; /* gray-200 */
+  --subtle: #9ca3af; /* gray-400 */
+  --accent: #2563eb; /* blue-600 */
+  --accent-2: #22c55e; /* green-500 */
+  --danger: #ef4444; /* red-500 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1000px 600px at 20% 20%, #111827 0%, #0b1220 50%, var(--background) 100%);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  padding: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.display {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+.history {
+  min-height: 20px;
+  color: var(--subtle);
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result {
+  font-variant-numeric: tabular-nums;
+  font-size: 40px;
+  line-height: 1.1;
+  margin-top: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 12px;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 6px 16px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:hover {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 10px 20px rgba(0,0,0,0.35);
+}
+
+.btn.operator {
+  background: linear-gradient(180deg, rgba(37,99,235,0.25), rgba(37,99,235,0.1));
+  border-color: rgba(37,99,235,0.35);
+}
+
+.btn.operator[aria-pressed="true"],
+.btn.equals {
+  background: linear-gradient(180deg, rgba(34,197,94,0.35), rgba(34,197,94,0.15));
+  border-color: rgba(34,197,94,0.45);
+}
+
+.btn.action {
+  background: linear-gradient(180deg, rgba(239,68,68,0.25), rgba(239,68,68,0.1));
+  border-color: rgba(239,68,68,0.35);
+}
+
+.btn.span-2 {
+  grid-column: span 2;
+}
+
+.btn:focus {
+  outline: 2px solid rgba(37,99,235,0.85);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
